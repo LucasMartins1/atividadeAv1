@@ -10,18 +10,64 @@
     <title>Hello, world!</title>
 
 
+        /*
+
+       <!-- Solução Questão - 01 -->
+       
+  <script type="text/javascript">
+        function verificar_media(){
+         var nome    = form_Gerar_media.nome.value;
+         var nota1   =  form_Gerar_media.nota1.value;
+         var nota2   =  form_Gerar_media.nota2.value;
+         var disciplina=form_Gerar_media.disciplina.value;
+    
+        var media=(parseFloat(nota1)+parseFloat(nota2))/2;
+        /*
+            document.write("=================Média=====================");
+            document.write("<br>Nome:"+nome);
+            document.write("<br>Nota 1:"+nota1);
+            document.write("<br>Nota 2:"+nota2);
+            document.write("<br>Sua média é:<br>"+media);
+    
+          if (media >= 7) {
+           document.write("Aprovado");
+           
+          }
+          
+          else {
+                      (media <7);
+            document.write("Reprovado")
+          }
+        
+          document.getElementById("demo").innerHTML = 
+        "---------------------------------------------- <b>Média</b> ----------------------------------------------"+
+        "<br><b>ALUNO:</b> "+nome.toUpperCase()+
+        "<br><b>DISCIPLINA:</b> "+DISCIPLINA.toUpperCase()+
+        "<br><b>MEDIA:</b> "(+parseFloat(media).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'}      
+        "<br>------------------------------------------------------------------------------------------------------------------"
+          */
 
 
 
+          document.getElementById("demo").innerHTML = 
+        "---------------------------------------------- <b>MEDIA ARITIMETICA</b> ----------------------------------------------"+
+        "<br><b>ALUNO:</b> "+nome.toUpperCase()+
+        "<br><b>DISCIPLINA:</b> "+disciplina.toUpperCase()+
+        "<br><b>NOTA 01:</b> "+parseFloat(nota1).toLocaleString('pt-BR')+
+        "<br><b>NOTA 02:</b> " +parseFloat(nota2).toLocaleString('pt-BR')+
+        "<br><b>MEDIA:</b> "+media.toLocaleString('pt-BR')+
+        "<br>------------------------------------------------------------------------------------------------------------------"
+      }
+        
 
 
-
+  </script>
     
   </head>
   <body>
     <link href="css/starter-template.css" rel="stylesheet">
    
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#"><img src ="image/lm.png" width="27px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -50,40 +96,96 @@
         </div>
       </nav>
 
-       <!-- Solução Questão - 01 -->
- <script >
-    
-      nome    =  prompt("Informe seu nome Completo:");
-      nota1   =   prompt("nota1(0,0 a 10)");
-      nota2   =   prompt("nota2(0,0 a 10)");
 
-      media =(parseFloat(nota1)+parseFloat(nota2))/2;
-
-     document.write("=================Média=====================");
-document.write("<br>Nome:"+nome);
-document.write("<br>Nota 1:"+nota1);
-document.write("<br>Nota 2:"+nota2);
-document.write("<br>Sua média é:"+media);
-
-      if (media >= 7) {
-       document.write("Aprovado");
-       
-      }
-      
-      
-      else {
-                  (media <7);
-        document.write("Reprovado")
-      }
-
-    
 
       
     
-  </script>
+    
+      <main role="main" class="container">
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <div class="starter-template">
+          <h1>Questão - 01</h1>
+          <p class="lead">Software para gerar MÉDIA DE ALUNO</p>
+        </div>
+        
+      <!--
+        <form name="verificar_media()" id="verificar_media">
+            <div class="form-group">
+              <label for="NomeCompleto">Nome Completo</label>
+              <input type="text" class="form-control" id="NomeCompleto" aria-describedby="nomeHelp">
+              <small id="nomeHelp" class="form-text text-muted">
+            </div>
+            <div class="form-group">
+                <label>Disciplina</label>
+                 <select class="custom-select" id="disciplina" name="disciplina" required>
+                  <option selected disabled value="">Selecione Uma Disciplina...</option>
+                  <option value="Programação WEB">Programação WEB</option>
+            </div>
+
+            <div class="form-group">
+                <label for="nota"> Nota 1</label>
+                 <input type="number" class="form-control" id="nota1" aria-describedby="nota1">
+            </div>
+            <div class="form-group">
+                <label for="nota"> Nota 2</label>
+                 <input type="number" class="form-control" id="nota2" aria-describedby="nota1">
+            </div>
+            <button onclick="verificar_media()" type="submit" class="btn btn-primary">Gerar</button>
+        </form>
+        <p id="media"></p>
+-->
+
+
+<div>
+  <form name="form_Gerar_media" id="form_Gerar_media">
+    <div class="form-row">
+      <div class="col">
+        <label>Aluno</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo do aluno" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label>Disciplina</label>
+        <select class="custom-select" id="disciplina" name="disciplina" required>
+          <option selected disabled value="">Selecione uma disciplina...</option>
+          <option value="disciplina">Programação WEB</option>
+          
+        </select>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label>nota 1</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend2">0 a 10</span>
+          </div>
+          <input type="text" class="form-control" id="nota1" name="nota1" required>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>nota 2</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend2">0 a 10</span>
+        </div>
+        <input type="text" class="form-control" id="nota2" name="nota2" required>
+      </div>
+    </div>
+  </div>
+
+
+    <button onclick="verificar_media()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+  </form>
+</div>
+<br><br>
+<p id="demo"></p>
+      </main>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="js/bootstrap.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
