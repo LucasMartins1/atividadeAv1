@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" >
+    <title>Hello, world!</title>
+
+
+
+    <script type="text/javascript">
+        function gerarimc(){
+          var nome    =  form_calcularimc.nome.value;
+          var altura  =  form_calcularimc.altura.value;
+          var peso    = form_calcularimc.peso.value;
+          
+          var imc = parseFloat(peso) / (parseFloat(altura) * parseFloat(altura));
+  
+          if(imc<18.5){
+            alert("Olá "+nome+ "você está no nível de obesidade: Baixo Peso. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Peso baixo para a altura. Maior probabilidade de anorexia.");
+          }
+          else if(imc>=18.5 && imc<24.9){
+            alert("Olá "+nome+ " você está no nível de obesidade: Peso Normal. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Maior probabilidade de ser um individuo saudável.");
+          }      
+          else if(imc>=25 && imc<29.9) {
+            alert("Olá "+nome+ " você está no nível de obesidade: Pré-obesidade. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Alguma probabilidade de problemas de saúde. Predisposição a torna-se obeso.");
+          }
+          else if(imc>=30 && imc<34,9) {
+            alert("Olá "+nome+ " você está no nível de obesidade: Obesidade Grau I. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Risco moderado de diabetes tipo II, hirtensão, colesterol, cardiopatia.");
+          }
+          else if (imc>35 && imc<39,9){
+            alert("Olá "+nome+ " você está no nível de obesidade: Obesidade Grau II. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Risco grave. Aumenta o risco das doenças associadas. O risco de mortalidade aumenta 50%.");
+          }
+          else if (imc>40){
+            alert("Olá "+nome+ " você está no nível de obesidade: Obesidade Grau III. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Risco muito grave. O risco de doenças associadas assim como a mortalidade aumenta 90%.");
+          }
+  
+       
+        document.getElementById("RESULTADO - IMC").innerHTML = 
+          "---------------------------------------------- <b>RESULTADO - IMC</b> ----------------------------------------------"+
+          "<br><b>PACIENTE:</b> "+nome.toUpperCase()+
+          "<br><b>ALTURA:</b> "+parseFloat(altura).toLocaleString()+
+          "<br><b>PESO:</b> "+parseFloat(peso).toLocaleString('pt-BR')+
+          "<br><b>IMC:</b> " +imc.toLocaleString('pt-BR')+
+          "<br>-----------------------------------------------------------------------------------------------------------------"
+  
+        }
+      </script>
+    </head>
+
+<body>
+        <link href="css/starter-template.css" rel="stylesheet">
+       
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#"><img src ="image/lm.png" width="27px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Menu <span class="sr-only">(current)</span></a>
+                </li>
+               
+                <li class="nav-item">
+                  
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Questões</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="Questão 01.html">Questão 01</a>
+                    <a class="dropdown-item" href="Questão 02.html">Questão 02</a>
+                    <a class="dropdown-item" href="Questão 03.html">Questão 03</a>
+                    <a class="dropdown-item" href="Questão 04.html">Questão 04</a>
+                  </div>
+                </li>
+              </ul>
+             
+            </div>
+          </nav>
+
+          
+      <main role="main" class="container">
+
+        <div class="starter-template">
+          <h1>Questão - 04</h1>
+          <p class="lead">Software para Calcular IMC</p>
+        </div>
+
+              <div>
+                <form style="text-align:left" name="form_calcularimc" id="form_calcularimc">
+              <div class="form-row">
+                <div class="col">
+                  <label>Nome</label>
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo da Pessoa" required>
+                </div>
+              </div>
+          
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label>altura</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend2">Altura</span>
+                    </div>
+                    <input type="text" class="form-control" id="altura" name="altura" required>
+                  </div>
+                </div>
+            </div>
+                 <div class="col-md-6 mb-3">
+                <label>Peso</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend2">Peso</span>
+                  </div>
+                  <input type="text" class="form-control" id="Peso" name="Peso" required>
+                </div>
+              </div>
+                </div>
+          
+          
+                <button onclick="gerarimc()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+            </form>
+          </div>
+          <br><br>
+          <p id="RESULTADO - IMC"></p>
+        </main>
+        <footer class="footer mt-auto py-3">
+            <div class="container">
+              <span  class="text-muted">Place sticky footer content here.</span>
+            </div>
+          </footer><!--Rodape-->
+    
+          
+          <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+          <script src="js/bootstrap.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+          </body>
+          </html>
